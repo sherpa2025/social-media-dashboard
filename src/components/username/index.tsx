@@ -1,7 +1,11 @@
 import { Text } from "@chakra-ui/react";
 import { UsernameProps } from "../../types";
 
-function Username({ username, fontSize, fontWeight }: UsernameProps) {
+function Username({
+  username = "@username",
+  fontSize = "15px",
+  fontWeight = "normal",
+}: UsernameProps) {
   return (
     <Text
       fontSize={fontSize}
