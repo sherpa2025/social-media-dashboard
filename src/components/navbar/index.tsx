@@ -1,6 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
-import ProfileIcon from "../profileIcon/profileIcon";
+import ProfileIcon from "../Profile Icon";
 import appIcon from "../../assets/App Icon.svg";
+import Username from "../username";
 const Navbar = () => {
   return (
     <Box
@@ -21,7 +22,10 @@ const Navbar = () => {
           />
         </Box>
         <Box>
-          <ProfileIcon boxSize={12} />
+          <Flex alignItems="center" justifyContent="space-between">
+            <Username username="@nima2024" fontSize="17px" fontWeight="bold" />
+            <ProfileIcon boxSize={10} />
+          </Flex>
         </Box>
       </Flex>
     </Box>

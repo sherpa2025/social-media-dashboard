@@ -1,9 +1,16 @@
-import Navbar from "./components/navbar/navbar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/navbar";
+import Dashboard from "./pages/dashboard";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
