@@ -1,7 +1,11 @@
-import "./App.css";
+import Navbar from "./components/navbar/navbar";
 
 function App() {
-  return <>Social Media Dashboard in Progress!</>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }
 
 export default App;
