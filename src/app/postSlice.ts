@@ -12,22 +12,22 @@ const postList: Post[] = [
     id: uuidv4(),
     name: "Nima Sherpa",
     username: "@nima2024",
-    dateOfCreation: "2023-03-17",
+    dateOfCreation: "2023-12-01",
     postContent: "This is my first post!",
   },
   {
     id: uuidv4(),
     name: "Nima Sherpa",
     username: "@nima2024",
-    dateOfCreation: "2024-03-17",
-    postContent: "Hello World!",
+    dateOfCreation: "2024-03-15",
+    postContent: "This is my second post!",
   },
   {
     id: uuidv4(),
     name: "Nima Sherpa",
     username: "@nima2024",
     dateOfCreation: "2024-03-16",
-    postContent: "This is my second post!",
+    postContent: "Hello!",
   },
 ];
 

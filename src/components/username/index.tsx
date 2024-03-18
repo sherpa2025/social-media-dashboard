@@ -8,12 +8,13 @@ function Username({
 }: UsernameProps) {
   return (
     <Text
+      as="em"
       fontSize={fontSize}
       fontWeight={fontWeight}
       mr="10px"
       letterSpacing="1px"
     >
-      <em>{username}</em>
+      {username}
     </Text>
   );
 }

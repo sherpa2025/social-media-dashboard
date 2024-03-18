@@ -16,9 +16,13 @@ import {
 import ProfileIcon from "../Profile Icon";
 import Username from "../username";
 import { UsernameProps } from "../../types";
+import { useAppDispatch } from "../../app/hooks";
+import { addPost } from "../../app/postSlice";
+import { v4 as uuidv4 } from "uuid";
 
 const NewPost = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [postContent, setPostContent] = useState("");
 
   const handleInputClick = () => {
     setIsOpen(true);
@@ -28,9 +32,30 @@ const NewPost = () => {
     setIsOpen(false);
   };
 
+  const dispatch = useAppDispatch();
+
+  const formatDate = (date: Date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
+
   const handlePost = () => {
-    // Handle posting logic here
+    const currentDate = new Date();
+    const formattedDate = formatDate(currentDate);
+
+    dispatch(
+      addPost({
+        id: uuidv4(),
+        name: "Nima Sherpa",
+        username: "@nima2024",
+        dateOfCreation: formattedDate,
+        postContent: postContent,
+      })
+    );
     setIsOpen(false);
+    setPostContent("");
   };
 
   const usernameProps: UsernameProps = {
@@ -60,6 +85,8 @@ const NewPost = () => {
           bg="#EEEEEE"
           w="100%"
           h="40px"
+          value={postContent}
+          onChange={(e) => setPostContent(e.target.value)}
         />
       </Box>
       <Modal isOpen={isOpen} onClose={handleCloseModal}>
@@ -77,6 +104,8 @@ const NewPost = () => {
             <Textarea
               variant="flushed"
               placeholder="What do you want to talk about?"
+              value={postContent}
+              onChange={(e) => setPostContent(e.target.value)}
             ></Textarea>
           </ModalBody>
           <ModalFooter>
