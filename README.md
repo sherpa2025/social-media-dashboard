@@ -6,7 +6,7 @@
 2. Install dependencies: yarn install
 3. Run the development server: yarn dev
 
-##Credits
+## Credits
 
 <a href="https://www.flaticon.com/free-icons/young" title="young icons">Young icons created by Freepik - Flaticon</a> --> Profile Icon
 
